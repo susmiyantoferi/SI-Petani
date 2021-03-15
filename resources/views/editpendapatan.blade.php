@@ -1,7 +1,7 @@
 @extends('layout/v_template')
 
 @section('title','Edit Pendapatan')
-    
+
 @section('content')
 
 <section class="content">
@@ -12,11 +12,11 @@
 
                     <form action="/pendapatan/update/{{ $pendapatan->id_pendapatan }}" method="post" enctype="multipart/form-data">
                         @csrf
-                    
+
                         <div class="content">
                             <div class="row">
                                 <div class="col-sm-6">
-                    
+
                                     <div class="form-group">
                                         <label>Id Pendapatan</label>
                                         <input name="id_pendapatan" class="form-control" value="{{ $pendapatan->id_pendapatan}}" readonly>
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Dibuat</label>
-                                        <input name="create_date" class="form-control" value="{{ $pendapatan->create_date }}">
+                                        <input type = "date" name="create_date" class="form-control" value="{{ $pendapatan->create_date }}">
                                         <div class="text-danger">
                                             @error('create_date')
                                                 {{ $message }}
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Ubah</label>
-                                        <input name="update_date" class="form-control" value="{{ $pendapatan->update_date }}">
+                                        <input type = "date" name="update_date" class="form-control" value="{{ $pendapatan->update_date }}">
                                         <div class="text-danger">
                                             @error('update_date')
                                                 {{ $message }}
@@ -75,7 +75,7 @@
                                         <button class="btn btn-primary btn-sm">Simpan</button>
                                         <a href="/pendapatan" class="btn -list-alt btn-success ">Kembali</a>
                                     </div>
-                    
+
                                 </div>
                             </div>
                         </div>

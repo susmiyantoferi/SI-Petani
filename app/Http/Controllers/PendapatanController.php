@@ -16,9 +16,7 @@ class PendapatanController extends Controller
     public function index()
     {
         $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> allDataPendapatan()];
-        $dataLadang = ['ladang'=> $this -> LadangModel -> allDataLadang()];  //tambah select combo box
-
-        return view('pendapatan', $dataPendapatan, $dataLadang);
+        return view('pendapatan', $dataPendapatan);
     }
 
     public function detail($id_pendapatan)

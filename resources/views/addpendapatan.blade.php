@@ -19,7 +19,7 @@
 
 
                                     <div class="form-group">
-                                        <label>Id Ladang</label>
+                                        <label>Ladang</label>
                                         <select name="id_ladang" class="form-control">
                                             <option>Please Select ...</option>
                                             @foreach ($ladang as $item)
@@ -38,8 +38,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Pendapatan</label>
-                                        <input name="amount" class="form-control" value="{{ old('amount') }}">
+                                        <label>Jumlah Pendapatan</label>
+                                        <input type="number" name="amount" class="form-control" value="{{ old('amount') }}">
                                         <div class="text-danger">
                                             @error('amount')
                                                 {{ $message }}
@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Dibuat</label>
-                                        <input name="create_date" class="form-control" value="{{ old('create_date') }}">
+                                        <input type = "date" name="create_date" class="form-control" value="{{ old('create_date') }}">
                                         <div class="text-danger">
                                             @error('create_date')
                                                 {{ $message }}
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Ubah</label>
-                                        <input name="update_date" class="form-control" value="{{ old('update_date') }}">
+                                        <input type = "date" name="update_date" class="form-control" value="{{ old('update_date') }}">
                                         <div class="text-danger">
                                             @error('update_date')
                                                 {{ $message }}
