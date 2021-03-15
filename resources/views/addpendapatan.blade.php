@@ -1,7 +1,7 @@
 @extends('layout/v_template')
 
 @section('title','Add Data Pendapatan')
-    
+
 @section('content')
 
 <section class="content">
@@ -12,20 +12,21 @@
 
                     <form action="/pendapatan/insert" method="post" enctype="multipart/form-data">
                         @csrf
-                    
+
                         <div class="content">
                             <div class="row">
                                 <div class="col-sm-6">
-                    
-                                    
+
+
                                     <div class="form-group">
                                         <label>Id Ladang</label>
-                                        <input name="id_ladang" class="form-control" value="{{ old('id_ladang') }}">
-                                        <div class="text-danger">
-                                            @error('id_ladang')
-                                                {{ $message }}
-                                            @enderror
-                                        </div>
+                                        <select name="id_ladang" class="form-control">
+                                            <option>Please Select ...</option>
+                                            @foreach ($ladang as $item)
+                                            <option value="{{ $item->id_ladang }}">{{ $item->nama }}</option>
+                                            @endforeach
+                                        </select>
+
                                     </div>
                                     <div class="form-group">
                                         <label>Panen Ke</label>
@@ -67,7 +68,7 @@
                                         <button class="btn btn-primary btn-sm">Simpan</button>
                                         <a href="/pendapatan" class="btn -list-alt btn-success ">Kembali</a>
                                     </div>
-                    
+
                                 </div>
                             </div>
                         </div>

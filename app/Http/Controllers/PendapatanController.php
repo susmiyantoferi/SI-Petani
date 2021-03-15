@@ -4,23 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PendapatanModel;
+use App\Models\LadangModel; //menggunakan model Ladang utk tambah select combo box
 
 class PendapatanController extends Controller
 {
     public function __construct()
     {
         $this->PendapatanModel = new PendapatanModel();
+        $this->LadangModel = new LadangModel();
     }
     public function index()
     {
         $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> allDataPendapatan()];
-        return view('pendapatan', $dataPendapatan);
+        $dataLadang = ['ladang'=> $this -> LadangModel -> allDataLadang()];  //tambah select combo box
+
+        return view('pendapatan', $dataPendapatan, $dataLadang);
     }
 
     public function detail($id_pendapatan)
     {
         if (!$this -> PendapatanModel -> detailData($id_pendapatan)){
-            abort(404); 
+            abort(404);
         }
 
         $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> detailData($id_pendapatan)];
@@ -29,7 +33,9 @@ class PendapatanController extends Controller
 
     public function add()
     {
-        return view('addpendapatan');
+
+        $dataLadang = ['ladang'=> $this -> LadangModel -> allDataLadang()]; //tambah select combo box
+        return view('addpendapatan', $dataLadang); //tambah select combo box
     }
 
     public function insert()
@@ -52,7 +58,7 @@ class PendapatanController extends Controller
            'create_date.required' => 'Kolom Wajib Diisi!',
            'update_date.required' => 'Kolom Wajib Diisi!'
         ]);
-        
+
 
         //sourcecode add data
         $data = [
@@ -71,7 +77,7 @@ class PendapatanController extends Controller
     public function edit($id_pendapatan)
     {
         if (!$this -> PendapatanModel -> detailData($id_pendapatan)){
-            abort(404); 
+            abort(404);
         }
 
         $dataPendapatan = [
@@ -100,7 +106,7 @@ class PendapatanController extends Controller
            'create_date.required' => 'Kolom Wajib Diisi!',
            'update_date.required' => 'Kolom Wajib Diisi!'
         ]);
-        
+
 
         //sourcecode add data
         $data = [
