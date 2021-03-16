@@ -104,4 +104,10 @@ class LadangController extends Controller
        $this->LadangModel->editData($id_ladang, $data);
        return redirect()->route('ladang')->with('pesan', 'Data Berhasil Di Update!');
    }
+
+   public function delete($id_ladang)
+   {
+        $this->LadangModel->deleteData($id_ladang);
+        return redirect()->route('ladang')->with('pesan', 'Data Berhasil Di Hapus!');
+   }
 }

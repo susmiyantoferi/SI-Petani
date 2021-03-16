@@ -114,5 +114,11 @@ class PengeluaranController extends Controller
         return redirect()->route('pengeluaran')->with('pesan', 'Data Berhasil Di Update!');
     }
 
+    public function delete($id_pengeluaran)
+    {
+        $this->PengeluaranModel->deleteData($id_pengeluaran);
+        return redirect()->route('pengeluaran')->with('pesan', 'Data Berhasil Di Hapus!');   
+    }
+
 
 }

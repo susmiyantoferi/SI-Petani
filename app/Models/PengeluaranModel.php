@@ -27,4 +27,9 @@ class PengeluaranModel extends Model
    {
      DB::table('pengeluaran')->where('id_pengeluaran', $id_pengeluaran)->update($data);
    }
+
+   public function deleteData($id_pengeluaran)
+   {
+     DB::table('pengeluaran')->where('id_pengeluaran', $id_pengeluaran)->delete();
+   }
 }

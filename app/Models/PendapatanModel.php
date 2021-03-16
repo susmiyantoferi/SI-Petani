@@ -27,4 +27,9 @@ class PendapatanModel extends Model
    {
       DB::table('pendapatan')->where('id_pendapatan', $id_pendapatan)->update($data);
    }
+
+   public function deleteData($id_pendapatan)
+   {
+      DB::table('pendapatan')->where('id_pendapatan', $id_pendapatan)->delete();
+   }
 }

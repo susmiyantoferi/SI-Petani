@@ -17,7 +17,6 @@
                             <div class="row">
                                 <div class="col-sm-6">
                     
-                                    
                                     <div class="form-group">
                                         <label>Id Ladang</label>
                                         <input name="id_ladang" class="form-control" value="{{ old('id_ladang') }}">

@@ -115,4 +115,10 @@ class PendapatanController extends Controller
         $this->PendapatanModel->editData($id_pendapatan, $data);
         return redirect()->route('pendapatan')->with('pesan', 'Data Berhasil Di Update!');
     }
+
+    public function delete($id_pendapatan)
+    {
+        $this->PendapatanModel->deleteData($id_pendapatan);
+        return redirect()->route('pendapatan')->with('pesan', 'Data Berhasil Di Hapus!');   
+    }
 }
