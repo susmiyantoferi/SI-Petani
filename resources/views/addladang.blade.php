@@ -19,7 +19,7 @@
 
 
                                     <div class="form-group">
-                                        <label>Nama</label>
+                                        <label>Nama Ladang</label>
                                         <input name="nama" class="form-control" value="{{ old('nama') }}">
                                         <div class="text-danger">
                                             @error('nama')

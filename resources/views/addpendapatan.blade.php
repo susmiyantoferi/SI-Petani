@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Ladang</label>
+                                        <label>Nama Ladang</label>
                                         <select name="id_ladang" class="form-control">
                                             <option value="">Please Select ...</option>
                                             @foreach ($ladang as $item)
@@ -55,7 +55,7 @@
 
 
                                     <div class="form-group">
-                                        <label>Tanggal Dibuat</label>
+                                        <label>Create Date</label>
                                         <input type = "date" name="create_date" class="form-control" value="{{ old('create_date') }}">
                                         <div class="text-danger">
                                             @error('create_date')
@@ -66,7 +66,7 @@
 
 
                                     <div class="form-group">
-                                        <label>Tanggal Ubah</label>
+                                        <label>Update Date</label>
                                         <input type = "date" name="update_date" class="form-control" value="{{ old('update_date') }}">
                                         <div class="text-danger">
                                             @error('update_date')

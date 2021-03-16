@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PengeluaranModel;
+use App\Models\PendapatanModel; //menggunakan model Pendapatan utk tambah select combo box
 
 class PengeluaranController extends Controller
 {
     public function __construct()
     {
         $this->PengeluaranModel = new PengeluaranModel();
+        $this->PendapatanModel = new PendapatanModel(); //menggunakan model Pendapatan utk tambah select combo box
     }
     public function index()
     {
@@ -29,7 +31,8 @@ class PengeluaranController extends Controller
 
     public function add()
     {
-        return view('addpengeluaran');
+        $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> allDataPendapatan()]; //tambah select combo box
+        return view('addpengeluaran', $dataPendapatan);  //tambah select combo box
     }
 
     public function insert()
@@ -46,7 +49,7 @@ class PengeluaranController extends Controller
            'id_pengeluaran.unique' => 'Id Ini Sudah Ada!',
            'id_pengeluaran.min' => 'Minimal 1 Karakter!',
            'id_pengeluaran.max' => 'Maksimal 5 Karakter!',
-            'id_pendapatan.required' => 'Kolom Wajib Diisi!',
+            'id_pendapatan.required' => 'Pilihan Wajib Diisi!',
            'nama.required' => 'Kolom Wajib Diisi!',
            'amount.required' => 'Kolom Wajib Diisi!',
            'create_date.required' => 'Kolom Wajib Diisi!',
@@ -93,7 +96,7 @@ class PengeluaranController extends Controller
             'id_pengeluaran.required' => 'Kolom Wajib Diisi!',
            'id_pengeluaran.min' => 'Minimal 1 Karakter!',
            'id_pengeluaran.max' => 'Maksimal 5 Karakter!',
-            'id_pendapatan.required' => 'Kolom Wajib Diisi!',
+            'id_pendapatan.required' => 'Pilihan Wajib Diisi!',
            'nama.required' => 'Kolom Wajib Diisi!',
            'amount.required' => 'Kolom Wajib Diisi!',
            'create_date.required' => 'Kolom Wajib Diisi!',
