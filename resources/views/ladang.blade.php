@@ -30,7 +30,7 @@
                                 <tbody>
                                 @foreach($ladang as $ladangs)
                                     <tr>
-                                        <td></td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{$ladangs->nama}}</td>
                                         <td>{{$ladangs->create_date}}</td>
                                         <td>{{$ladangs->update_date}}</td>

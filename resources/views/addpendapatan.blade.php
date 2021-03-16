@@ -16,11 +16,6 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-sm-6">
-<<<<<<< HEAD
-                    
-=======
-
->>>>>>> 70c3187939271a9155638976f6928aeed9760d06
                                     <div class="form-group">
                                         <label>Ladang</label>
                                         <select name="id_ladang" class="form-control">
