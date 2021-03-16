@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PendapatanModel;
+use App\Models\LadangModel; //menggunakan model Ladang utk tambah select combo box
 
 class PendapatanController extends Controller
 {
     public function __construct()
     {
         $this->PendapatanModel = new PendapatanModel();
+        $this->LadangModel = new LadangModel();
     }
     public function index()
     {
@@ -20,7 +22,7 @@ class PendapatanController extends Controller
     public function detail($id_pendapatan)
     {
         if (!$this -> PendapatanModel -> detailData($id_pendapatan)){
-            abort(404); 
+            abort(404);
         }
 
         $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> detailData($id_pendapatan)];
@@ -29,7 +31,9 @@ class PendapatanController extends Controller
 
     public function add()
     {
-        return view('addpendapatan');
+
+        $dataLadang = ['ladang'=> $this -> LadangModel -> allDataLadang()]; //tambah select combo box
+        return view('addpendapatan', $dataLadang); //tambah select combo box
     }
 
     public function insert()
@@ -46,13 +50,13 @@ class PendapatanController extends Controller
            'id_pendapatan.unique' => 'Id Ini Sudah Ada!',
            'id_pendapatan.min' => 'Minimal 1 Karakter!',
            'id_pendapatan.max' => 'Maksimal 5 Karakter!',
-            'id_ladang.required' => 'Kolom Wajib Diisi!',
+           'id_ladang.required' => 'Pilihan Wajib Diisi!',
            'nama.required' => 'Kolom Wajib Diisi!',
            'amount.required' => 'Kolom Wajib Diisi!',
            'create_date.required' => 'Kolom Wajib Diisi!',
            'update_date.required' => 'Kolom Wajib Diisi!'
         ]);
-        
+
 
         //sourcecode add data
         $data = [
@@ -71,7 +75,7 @@ class PendapatanController extends Controller
     public function edit($id_pendapatan)
     {
         if (!$this -> PendapatanModel -> detailData($id_pendapatan)){
-            abort(404); 
+            abort(404);
         }
 
         $dataPendapatan = [
@@ -94,13 +98,13 @@ class PendapatanController extends Controller
             'id_pendapatan.required' => 'Kolom Wajib Diisi!',
            'id_pendapatan.min' => 'Minimal 1 Karakter!',
            'id_pendapatan.max' => 'Maksimal 5 Karakter!',
-            'id_ladang.required' => 'Kolom Wajib Diisi!',
+            'id_ladang.required' => 'Pilihan Wajib Diisi!',
            'nama.required' => 'Kolom Wajib Diisi!',
            'amount.required' => 'Kolom Wajib Diisi!',
            'create_date.required' => 'Kolom Wajib Diisi!',
            'update_date.required' => 'Kolom Wajib Diisi!'
         ]);
-        
+
 
         //sourcecode add data
         $data = [

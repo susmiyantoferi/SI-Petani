@@ -32,7 +32,7 @@
                                 <tbody>
                                 @foreach($pendapatan as $pendapatans)
                                     <tr>
-                                        <td></td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{$pendapatans->id_ladang}}</td>
                                         <td>{{$pendapatans->nama}}</td>
                                         <td>{{$pendapatans->amount}}</td>
