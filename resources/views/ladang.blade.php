@@ -16,6 +16,24 @@
                             {{ session('pesan') }}.
                           </div>
                         @endif
+
+                        {{-- Box pencarian --}}
+
+                        <div class="box-tools">
+                            <form th:action="@{/karyawan/list}" method="get">
+                                <div class="input-group input-group-sm" style="width: 250px;">
+                                    <input type="text" name="value" class="form-control pull-right"
+                                           placeholder="Pencarian Berdasarkan Nama" th:if="${key} == null"/>
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    {{-- Box pencarian --}}
+
                         <div class="box-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
@@ -52,8 +70,8 @@
         </div>
     <section>
 
-    @foreach ($ladang as $ladangs)  
-    
+    @foreach ($ladang as $ladangs)
+
     <div class="modal modal-danger fade" id="delete{{ $ladangs->id_ladang }}">
         <div class="modal-dialog">
           <div class="modal-content">
