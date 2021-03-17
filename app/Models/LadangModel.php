@@ -27,7 +27,7 @@ class LadangModel extends Model
    {
         DB::table('ladang')->where('id_ladang', $id_ladang)->update($data);
    }
-   
+
    public function deleteData($id_ladang)
    {
         DB::table('ladang')->where('id_ladang', $id_ladang)->delete();

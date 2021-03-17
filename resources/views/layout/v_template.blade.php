@@ -53,7 +53,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -70,7 +70,7 @@
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
-             
+
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
@@ -85,7 +85,7 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-         
+
         </ul>
       </div>
     </nav>
@@ -132,7 +132,7 @@
     <section class="content-header">
       <h1>
         @yield('title')
-      </h1> 
+      </h1>
     </section>
 
     <!-- Main content -->

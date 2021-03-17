@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PengeluaranModel;
 use App\Models\PendapatanModel; //menggunakan model Pendapatan utk tambah select combo box
-
+use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
 class PengeluaranController extends Controller
 {
     public function __construct()
@@ -16,7 +16,8 @@ class PengeluaranController extends Controller
     public function index()
     {
         $dataPengeluaran = ['pengeluaran'=> $this -> PengeluaranModel -> allDataPengeluaran()];
-        return view('pengeluaran', $dataPengeluaran);
+        return view('pengeluaran', [ 'pengeluaran' => DB::table('pengeluaran')->paginate(5)]); //Penambahan fitur paginate
+        //return view('pengeluaran', $dataPengeluaran);
     }
 
     public function detail($id_pengeluaran)
@@ -120,7 +121,7 @@ class PengeluaranController extends Controller
     public function delete($id_pengeluaran)
     {
         $this->PengeluaranModel->deleteData($id_pengeluaran);
-        return redirect()->route('pengeluaran')->with('pesan', 'Data Berhasil Di Hapus!');   
+        return redirect()->route('pengeluaran')->with('pesan', 'Data Berhasil Di Hapus!');
     }
 
 
