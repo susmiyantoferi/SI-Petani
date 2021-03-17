@@ -6,15 +6,16 @@
     <li class="{{ request()->is('pengeluaran') ? 'active' : '' }}"><a href="/pengeluaran"><i class="fa fa-book"></i> <span>Master Pengeluaran</span></a></li>
     <li class="treeview">
       <a href="#">
-        <i class="fa fa-share"></i> <span>Multilevel</span>
+        <i class="fa fa-files-o"></i> <span>Laporan Hasil</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+        <li><a href="#"><i class="fa fa-pie-chart"></i>Hasil Laba Semua Ladang</a></li>
         </li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+        <li><a href="#"><i class="fa fa-pie-chart"></i>Hasil Laba Ladang 1</a></li>
+        <li><a href="#"><i class="fa fa-pie-chart"></i>Hasil Laba Ladang 2</a></li>
       </ul>
     </li>
     
