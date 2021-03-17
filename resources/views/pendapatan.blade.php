@@ -17,7 +17,7 @@
                           </div>
                         @endif
 
-                          {{-- Box pencarian --}}
+                          {{-- Start Box pencarian --}}
 
                         <div class="box-tools">
                             <form th:action="@{/karyawan/list}" method="get">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
 
-                    {{-- Box pencarian --}}
+                    {{-- end Box pencarian --}}
 
 
                         <div class="box-body">
