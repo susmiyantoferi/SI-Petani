@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Pendapatan</label>
-                                        <input name="amount" class="form-control" value="{{ $pendapatan->amount }}">
+                                        <input type="number" name="amount" class="form-control" value="{{ $pendapatan->amount }}">
                                         <div class="text-danger">
                                             @error('amount')
                                                 {{ $message }}
@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Tanggal Dibuat</label>
+                                        <label>Create Date</label>
                                         <input type = "date" name="create_date" class="form-control" value="{{ $pendapatan->create_date }}">
                                         <div class="text-danger">
                                             @error('create_date')
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Tanggal Ubah</label>
+                                        <label>Update Date</label>
                                         <input type = "date" name="update_date" class="form-control" value="{{ $pendapatan->update_date }}">
                                         <div class="text-danger">
                                             @error('update_date')
