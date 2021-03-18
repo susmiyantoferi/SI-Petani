@@ -68,6 +68,13 @@
                                 @endforeach
                                 </tbody>
                             </table>
+
+                            {{-- Penambahan fitur paginate --}}
+                        <div class="container text-center">
+                            {{ $pendapatan->links() }}
+                        </div>
+                        {{-- Penambahan fitur paginate --}}
+
                         </div>
                     </div>
                 </div>
