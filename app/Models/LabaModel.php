@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class LabaModel extends Model
 {
-    public function allDataLaba()
-    {
-        return DB::table('laba')->get();
-    }
+   public function allDataLaba()
+   {
+       return DB::table('laba')->get();
+   }
 }
