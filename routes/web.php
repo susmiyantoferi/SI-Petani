@@ -23,6 +23,8 @@ use App\Http\Controllers\PengeluaranController;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('laba', [LabaController::class, 'index']);
+
 Route::get('ladang', [LadangController::class, 'index'])->name('ladang');
 Route::get('ladang/detail/{id_ladang}', [LadangController::class, 'detail']);
 Route::get('ladang/add', [LadangController::class, 'add']);
