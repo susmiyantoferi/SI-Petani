@@ -30,7 +30,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
 
                     {{-- Box pencarian --}}
 
@@ -84,6 +84,7 @@
             </div>
         </div>
         </div>
+    </div>
         <section>
 
            

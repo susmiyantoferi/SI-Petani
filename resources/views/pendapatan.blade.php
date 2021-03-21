@@ -30,7 +30,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
 
                     {{-- end Box pencarian --}}
 
@@ -80,6 +80,7 @@
                 </div>
             </div>
         </div>
+    </div>
     <section>
 
         @foreach ($pendapatan as $pendapatans)

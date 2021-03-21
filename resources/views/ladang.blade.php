@@ -30,7 +30,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
 
                     {{-- Box pencarian --}}
 
@@ -78,6 +78,7 @@
             </div>
         </div>
         </div>
+    </div>
         <section>
 
             @foreach ($ladang as $ladangs)
@@ -103,6 +104,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
+            
         </section>
         <!-- /.content -->
         </div>

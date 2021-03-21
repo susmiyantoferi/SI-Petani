@@ -30,7 +30,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
 
                     {{-- Box pencarian --}}
 
@@ -83,6 +83,7 @@
             </div>
         </div>
         </div>
+    </div>
         <section>
 
             @foreach ($pengeluaran as $pengeluarans)
