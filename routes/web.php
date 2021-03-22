@@ -16,6 +16,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('laba', [LabaController::class, 'index']);
 Route::get('laba/detail/{id_laba}', [LabaController::class, 'detail']);
+Route::get('laba/add', [LabaController::class, 'add']);
+Route::post('laba/insert', [LabaController::class, 'insert']);
 
 Route::get('ladang', [LadangController::class, 'index'])->name('ladang');
 Route::get('ladang/detail/{id_ladang}', [LadangController::class, 'detail']);

@@ -17,4 +17,9 @@ class LabaModel extends Model
    {
        return DB::table('laba')-> where ('id_laba', $id_laba)->first();
    }
+
+   public function addData($data)
+   {
+      DB::table('laba')->insert($data);
+   }
 }
