@@ -12,4 +12,9 @@ class LabaModel extends Model
    {
        return DB::table('laba')->get();
    }
+
+   public function detailData($id_laba) 
+   {
+       return DB::table('laba')-> where ('id_laba', $id_laba)->first();
+   }
 }

@@ -24,4 +24,14 @@ class LabaController extends Controller
         //return view('laba', $dataLaba);
     }
 
+    public function detail($id_laba) 
+    {
+        if (!$this->LabaModel->detailData($id_laba)) {
+            abort(404);
+        }
+
+        $dataLaba = ['laba' => $this->LabaModel->detailData($id_laba)];
+        return view('detaillaba', $dataLaba);
+    }
+
 }

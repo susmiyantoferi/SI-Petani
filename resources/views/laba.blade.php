@@ -59,7 +59,7 @@
                                     <td>{{ $labas->create_date }}</td>
                                     <td>{{ $labas->update_date }}</td>
                                     <td>
-                                        <a href=""
+                                        <a href="/laba/detail/{{ $labas->id_laba }}"
                                             class="btn glyphicon glyphicon-list-alt btn-success ">Detail</a>
                                         <a href=""
                                             class="btn glyphicon glyphicon-check btn-warning ">Edit</a>
