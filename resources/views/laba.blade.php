@@ -61,10 +61,10 @@
                                     <td>
                                         <a href="/laba/detail/{{ $labas->id_laba }}"
                                             class="btn glyphicon glyphicon-list-alt btn-success ">Detail</a>
-                                        <a href=""
+                                        <a href="/laba/edit/{{ $labas->id_laba }}"
                                             class="btn glyphicon glyphicon-check btn-warning ">Edit</a>
                                         <button type="button" class="btn glyphicon glyphicon-trash btn-danger"
-                                            data-toggle="modal" data-target="">
+                                            data-toggle="modal" data-target="#delete{{ $labas->id_laba }}">
                                             Delete
                                         </button>
                                     </td>
@@ -86,6 +86,36 @@
         </div>
     </div>
         <section>
+
+            @foreach ($laba as $labas)
+
+            <div class="modal modal-danger fade" id="delete{{ $labas->id_laba }}">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">{{ $labas->hasil }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Apakah Anda Ingin Menghapus Data Ini ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
+                            <a href="/laba/delete/{{ $labas->id_laba }}" class="btn btn-outline">Yes</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+        
+    </section>
+    <!-- /.content -->
+    </div>
+
+    @endforeach
 
            
 

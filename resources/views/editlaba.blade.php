@@ -1,6 +1,6 @@
 @extends('layout/v_template')
 
-@section('title','Edit Pendapatan')
+@section('title','Edit Laba')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="box box-primary">
                 <div class="box-header table-responsive">
 
-                    <form action="/pendapatan/update/{{ $pendapatan->id_pendapatan }}" method="post" enctype="multipart/form-data">
+                    <form action="/laba/update/{{ $laba->id_laba }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="content">
@@ -18,8 +18,17 @@
                                 <div class="col-sm-6">
 
                                     <div class="form-group">
+                                        <label>Id Laba</label>
+                                        <input name="id_laba" class="form-control" value="{{ $laba->id_laba  }}" readonly>
+                                        <div class="text-danger">
+                                            @error('id_laba')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Id Pendapatan</label>
-                                        <input name="id_pendapatan" class="form-control" value="{{ $pendapatan->id_pendapatan}}" readonly>
+                                        <input name="id_pendapatan" class="form-control" value="{{ $laba->id_pendapatan  }}" readonly>
                                         <div class="text-danger">
                                             @error('id_pendapatan')
                                                 {{ $message }}
@@ -27,17 +36,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Id Ladang</label>
-                                        <input name="id_ladang" class="form-control" value="{{ $pendapatan->id_ladang }}" readonly>
+                                        <label>Id Pengeluaran</label>
+                                        <input name="id_pengeluaran" class="form-control" value="{{ $laba->id_pengeluaran  }}" readonly>
                                         <div class="text-danger">
-                                            @error('id_ladang')
+                                            @error('id_pengeluaran')
                                                 {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Panen Ke</label>
-                                        <input name="nama" class="form-control" value="{{ $pendapatan->nama}}">
+                                        <label>Nama</label>
+                                        <input name="nama" class="form-control" value="{{ $laba->nama }}">
                                         <div class="text-danger">
                                             @error('nama')
                                                 {{ $message }}
@@ -45,17 +54,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Pendapatan</label>
-                                        <input name="amount" class="form-control" value="{{ $pendapatan->amount}}">
+                                        <label>Hasil</label>
+                                        <input name="hasil" class="form-control" value="{{ $laba->hasil }}">
                                         <div class="text-danger">
-                                            @error('amount')
+                                            @error('hasil')
                                                 {{ $message }}
                                             @enderror
                                         </div>
-                                    </div>                                   
+                                    </div>
                                     <div class="form-group">
                                         <label>Create Date</label>
-                                        <input type = "date" name="create_date" class="form-control" value="{{ $pendapatan->create_date }}">
+                                        <input type = "date" name="create_date" class="form-control" value="{{ $laba->create_date }}">
                                         <div class="text-danger">
                                             @error('create_date')
                                                 {{ $message }}
@@ -64,7 +73,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Update Date</label>
-                                        <input type = "date" name="update_date" class="form-control" value="{{ $pendapatan->update_date }}">
+                                        <input type = "date" name="update_date" class="form-control" value="{{ $laba->update_date}}">
                                         <div class="text-danger">
                                             @error('update_date')
                                                 {{ $message }}
@@ -73,12 +82,14 @@
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary btn-sm">Simpan</button>
-                                        <a href="/pendapatan" class="btn -list-alt btn-success ">Kembali</a>
+                                        <a href="/laba" class="btn -list-alt btn-success ">Kembali</a>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
+
+
                     </form>
 
                 </div>

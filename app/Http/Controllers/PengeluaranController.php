@@ -104,7 +104,7 @@ class PengeluaranController extends Controller
            'update_date.required' => 'Kolom Wajib Diisi!'
         ]);
 
-        //sourcecode add data
+        //sourcecode update data
         $data =[
             'id_pengeluaran' => Request()-> id_pengeluaran,
             'id_pendapatan' => Request()-> id_pendapatan,

@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Pengeluaran</label>
-                                        <input type="number" name="amount" class="form-control" value="{{ $pengeluaran->amount }}">
+                                        <input name="amount" class="form-control" value="{{ $pengeluaran->amount }}">
                                         <div class="text-danger">
                                             @error('amount')
                                                 {{ $message }}

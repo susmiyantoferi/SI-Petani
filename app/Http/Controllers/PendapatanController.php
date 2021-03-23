@@ -108,7 +108,7 @@ class PendapatanController extends Controller
         ]);
 
 
-        //sourcecode add data
+        //sourcecode update data
         $data = [
             //'id_pendapatan' => Request()-> id_pendapatan,
             'id_ladang' => Request()-> id_ladang,

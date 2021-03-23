@@ -96,7 +96,7 @@ class LadangController extends Controller
         ]);
 
 
-        //sourcecode add data
+        //sourcecode update data
         $data = [
             'id_ladang' => Request()->id_ladang,
             'nama' => Request()->nama,

@@ -22,4 +22,14 @@ class LabaModel extends Model
    {
       DB::table('laba')->insert($data);
    }
+
+   public function editData($id_laba, $data) 
+   {
+        DB::table('laba')->where('id_laba', $id_laba)->update($data);
+   }
+
+   public function deleteData($id_laba)
+   {
+        DB::table('laba')->where('id_laba', $id_laba)->delete();
+   }
 }

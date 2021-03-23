@@ -76,7 +76,54 @@ class LabaController extends Controller
 
         $this->LabaModel->addData($data);
         return redirect()->route('laba')->with('pesan', 'Data Berhasil DItambahkan!');
+    }
 
-}
+    public function edit($id_laba)
+    {
+        if (!$this->LabaModel->detailData($id_laba)) {
+            abort(404);
+        }
+
+        $dataLaba = [
+            'laba' => $this->LabaModel->detailData($id_laba)
+        ];
+
+        return view('editlaba', $dataLaba);
+    }
+
+    public function update($id_laba)
+    {
+        Request()->validate([
+            'nama' => 'required',
+            'hasil' => 'required',
+            'create_date' => 'required',
+            'update_date' => 'required'
+        ], [
+            'nama.required' => 'Kolom Wajib Diisi!',
+            'hasil.required' => 'Kolom Wajib Diisi!',
+            'create_date.required' => 'Kolom Wajib Diisi!',
+            'update_date.required' => 'Kolom Wajib Diisi!'
+        ]);
+
+         //sourcecode update data
+         $data = [
+            'id_laba' => Request()->id_laba,
+            'id_pendapatan' => Request()->id_pendapatan,
+            'id_pengeluaran' => Request()->id_pengeluaran,
+            'nama' => Request()->nama,
+            'hasil' => Request()->hasil,
+            'create_date' => Request()->create_date,
+            'update_date' => Request()->update_date
+        ];
+
+        $this->LabaModel->editData($id_laba, $data);
+        return redirect()->route('laba')->with('pesan', 'Data Berhasil Di Update!');
+    }
+
+    public function delete($id_laba)
+    {
+        $this->LabaModel->deleteData($id_laba);
+        return redirect()->route('laba')->with('pesan', 'Data Berhasil Di Hapus!');
+    }
 
 }
