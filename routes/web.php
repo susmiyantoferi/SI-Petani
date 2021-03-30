@@ -47,3 +47,7 @@ Route::post('pengeluaran/update/{id_pengeluaran}', [PengeluaranController::class
 Route::get('pengeluaran/delete/{id_pengeluaran}', [PengeluaranController::class, 'delete']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

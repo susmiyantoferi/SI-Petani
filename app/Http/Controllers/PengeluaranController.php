@@ -12,6 +12,7 @@ class PengeluaranController extends Controller
     {
         $this->PengeluaranModel = new PengeluaranModel();
         $this->PendapatanModel = new PendapatanModel(); //menggunakan model Pendapatan utk tambah select combo box
+        $this->middleware('auth'); //login
     }
     public function index()
     {

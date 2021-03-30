@@ -11,6 +11,7 @@ class LadangController extends Controller
     public function __construct()
     {
         $this->LadangModel = new LadangModel();
+        $this->middleware('auth'); //login
     }
 
     public function index()

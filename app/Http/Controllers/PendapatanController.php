@@ -13,6 +13,7 @@ class PendapatanController extends Controller
     {
         $this->PendapatanModel = new PendapatanModel();
         $this->LadangModel = new LadangModel();
+        $this->middleware('auth'); //login
     }
     public function index()
     {

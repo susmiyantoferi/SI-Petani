@@ -57,17 +57,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('AdminLTE/') }}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="{{ asset('AdminLTE/') }}/dist/img/nanas.jpeg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('AdminLTE/') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{ asset('AdminLTE/') }}/dist/img/nanas.jpeg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{ Auth::user()->name }} - {{ Auth::user()->email }}
+                  <small>Member since Zero. 6661</small>
                 </p>
               </li>
 
@@ -79,7 +79,10 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    <button type="submit" class="btn btn-default btn-flat">Logout</button>
+                </form>
                 </div>
               </li>
             </ul>
@@ -100,10 +103,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('AdminLTE/') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('AdminLTE/') }}/dist/img/nanas.jpeg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -149,7 +152,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 6.6.6
     </div>
-    <strong>Copyright &copy; 2021-2022 <a href="/">Susmiyanto DevStudio</a>.</strong> All rights
+    <strong>Copyright &copy; 2021-2022 <a href="/">{{ Auth::user()->name }} DevStudio</a>.</strong> All rights
     reserved.
   </footer>
 

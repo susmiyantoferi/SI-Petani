@@ -14,6 +14,7 @@ class LabaController extends Controller
     public function __construct()
     {
         $this->LabaModel = new LabaModel();
+        $this->middleware('auth');
     }
 
     public function index()
