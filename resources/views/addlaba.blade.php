@@ -18,8 +18,14 @@
                                 <div class="col-sm-6">
                                 
                                     <div class="form-group">
-                                        <label>Id Pendapatan</label>
-                                        <input name="id_pendapatan" class="form-control" value="{{ old('id_pendapatan') }}">
+                                        <label>Periode Pendapatan</label>
+                                        <select name="id_pendapatan" class="form-control">
+                                            <option value="">Please Select ...</option>
+                                            @foreach ($pendapatan as $item)
+                                            <option value="{{ $item->id_pendapatan }}"{{ old('id_pendapatan') == $item->id_pendapatan ? 'selected' : null }}>{{ $item->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                        <!--<input name="id_pendapatan" class="form-control" value="{{ old('id_pendapatan') }}">-->
                                         <div class="text-danger">
                                             @error('id_pendapatan')
                                                 {{ $message }}
@@ -28,8 +34,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Id Pengeluaran</label>
-                                        <input name="id_pengeluaran" class="form-control" value="{{ old('id_pengeluaran') }}">
+                                        <label>Nama Pengeluaran</label>
+                                        <select name="id_pengeluaran" class="form-control">
+                                            <option value="">Please Select ...</option>
+                                            @foreach ($pengeluaran as $item)
+                                            <option value="{{ $item->id_pengeluaran }}"{{ old('id_pengeluaran') == $item->id_pengeluaran ? 'selected' : null }}>{{ $item->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                        <!--<input name="id_pendapatan" class="form-control" value="{{ old('id_pengeluaran') }}">-->
                                         <div class="text-danger">
                                             @error('id_pengeluaran')
                                                 {{ $message }}

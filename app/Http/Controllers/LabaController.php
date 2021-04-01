@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\LabaModel;
-// use App\Models\PendapatanModel; //menggunakan model Ladang utk tambah select combo box
-use App\Models\PengeluaranModel; //menggunakan model Ladang utk tambah select combo box
+use App\Models\PendapatanModel; //menggunakan model Pendapatan utk tambah select combo box
+use App\Models\PengeluaranModel; //menggunakan model Pendapatan utk tambah select combo box
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
 
 class LabaController extends Controller
@@ -14,6 +14,8 @@ class LabaController extends Controller
     public function __construct()
     {
         $this->LabaModel = new LabaModel();
+        $this->PendapatanModel = new PendapatanModel(); //menggunakan model Pendapatan utk tambah select combo box
+        $this->PengeluaranModel = new PengeluaranModel(); //menggunakan model Pendapatan utk tambah select combo box
         $this->middleware('auth');
     }
 
@@ -37,12 +39,12 @@ class LabaController extends Controller
 
     public function add()
     {
-        return view('addlaba');
-        // $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> allDataPendapatan()];//tambah select combo box
-        // return view('addlaba', $dataPendapatan);//tambah select combo box
+        //return view('addlaba');
+        $dataPendapatan = ['pendapatan'=> $this -> PendapatanModel -> allDataPendapatan()]; //tambah select combo box
+        $dataPengeluaran = ['pengeluaran'=> $this -> PengeluaranModel -> allDataPengeluaran()]; //tambah select combo box
+        return view('addlaba', $dataPendapatan, $dataPengeluaran);  //tambah select combo box //tambah select combo box
 
-        // $dataPengeluaran = ['pengeluaran'=> $this -> PengeluaranModel -> allDataPengeluaran()];//tambah select combo box
-        // return view('addlaba', $dataPengeluaran);//tambah select combo box
+        
     }
 
     public function insert()

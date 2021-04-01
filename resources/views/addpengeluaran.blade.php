@@ -15,7 +15,7 @@
                     
                         <div class="content">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6"> 
                     
                                     
                                     <div class="form-group">
