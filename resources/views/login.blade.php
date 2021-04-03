@@ -72,11 +72,7 @@
         <!-- /.col -->
       </div>
     </form>
-
-
-
   </div>
-  <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
 

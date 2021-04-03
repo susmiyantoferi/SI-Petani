@@ -47,7 +47,7 @@
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-             @enderror
+            @enderror
           </div>
 
       <div class="form-group has-feedback">
@@ -90,10 +90,7 @@
         <!-- /.col -->
       </div>
     </form>
-
-
-
-  </div>
+</div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
