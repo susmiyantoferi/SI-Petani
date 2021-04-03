@@ -53,8 +53,8 @@
              <!-- small box -->
              <div class="small-box bg-red">
                  <div class="inner">
-                 @foreach($labaBersih as $laba) <!-- Penambhan fitur read dari view database laba_bersih-->
-                     <h4>{{ $laba->laba_bersih }}</h4>
+                 @foreach($labaBersih as $labas) <!-- Penambhan fitur read dari view database laba_bersih-->
+                     <h4>{{ $labas->laba_bersih }}</h4>
                      @endforeach
                      <p>Total Revenue</p>
                  </div>
