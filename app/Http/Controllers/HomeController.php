@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('v_home');
+        $countLadang = DB::table('ladang')->count();                    //Penambhan fitur count row data pada table
+        $sumPendapatan = DB::table('pendapatan')->sum('pendapatan.amount');            //Penambhan fitur count row data pada table
+        $sumPengeluaran = DB::table('pengeluaran')->sum('pengeluaran.amount');         //Penambhan fitur count row data pada table
+        $labaBersih = DB::table('laba_bersih')->get();                        //Penambhan fitur count row data pada table
+        return view('v_home', ['labaBersih'=> $labaBersih], compact('countLadang','sumPendapatan', 'sumPengeluaran')); //Penambhan fitur count row data pada table
     }
 }
