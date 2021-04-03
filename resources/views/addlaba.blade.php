@@ -16,13 +16,13 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-sm-6">
-                                
+
                                     <div class="form-group">
                                         <label>Periode Pendapatan</label>
                                         <select name="id_pendapatan" class="form-control">
                                             <option value="">Please Select ...</option>
                                             @foreach ($pendapatan as $item)
-                                            <option value="{{ $item->id_pendapatan }}"{{ old('id_pendapatan') == $item->id_pendapatan ? 'selected' : null }}>{{ $item->nama }}</option>
+                                            <option value="{{ $item->id_pendapatan }}"{{ old('id_pendapatan') == $item->id_pendapatan ? 'selected' : null }}>{{ $item->id_pendapatan }} - {{ $item->nama }}</option>
                                             @endforeach
                                         </select>
                                         <!--<input name="id_pendapatan" class="form-control" value="{{ old('id_pendapatan') }}">-->
@@ -38,7 +38,7 @@
                                         <select name="id_pengeluaran" class="form-control">
                                             <option value="">Please Select ...</option>
                                             @foreach ($pengeluaran as $item)
-                                            <option value="{{ $item->id_pengeluaran }}"{{ old('id_pengeluaran') == $item->id_pengeluaran ? 'selected' : null }}>{{ $item->nama }}</option>
+                                            <option value="{{ $item->id_pengeluaran }}"{{ old('id_pengeluaran') == $item->id_pengeluaran ? 'selected' : null }}>{{$item->id_pendapatan }} - {{ $item->nama }}</option>
                                             @endforeach
                                         </select>
                                         <!--<input name="id_pendapatan" class="form-control" value="{{ old('id_pengeluaran') }}">-->

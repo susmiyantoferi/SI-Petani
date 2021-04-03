@@ -30,7 +30,7 @@
                                 </div>
                             </form>
                         </div>
-                    
+
 
                     {{-- Box pencarian --}}
 
@@ -39,7 +39,7 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Ladang</th>
+                                    <th>Pendapatan Id</th>
                                     <th>Nama Jenis</th>
                                     <th>Pengeluaran</th>
                                     <th>Create Date</th>

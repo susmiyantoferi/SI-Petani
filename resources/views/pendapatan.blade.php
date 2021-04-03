@@ -37,7 +37,7 @@
                                 <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Ladang</th>
+                                    <th>Ladang Id </th>
                                     <th>Panen Ke</th>
                                     <th>Pendapatan</th>
                                     <th>Create Date</th>
