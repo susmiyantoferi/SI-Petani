@@ -18,20 +18,17 @@
                         @endif
 
                           {{-- Start Box pencarian --}}
-
                         <div class="box-tools">
-                            <form th:action="@{/karyawan/list}" method="get">
+                            <form action="/searchPendapatan" method="get">
                                 <div class="input-group input-group-sm" style="width: 250px;">
-                                    <input type="text" name="value" class="form-control pull-right"
-                                           placeholder="Pencarian Berdasarkan Nama" th:if="${key} == null"/>
+                                    <input type="search" name="searchPendapatan" class="form-control pull-right"
+                                           placeholder="Pencarian Data ..." th:if="${key} == null"/>
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    
-
                     {{-- end Box pencarian --}}
 
 

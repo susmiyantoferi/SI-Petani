@@ -22,6 +22,15 @@ class PendapatanController extends Controller
         //return view('pendapatan', $dataPendapatan);
     }
 
+    //start penambahan fitur pencarian atau search
+    public function searchPendapatan(request $request)
+    {
+        $searchPendapatan =  $request -> get('searchPendapatan');
+        $cari = DB::table('pendapatan')->where('nama', 'ilike', '%'.$searchPendapatan.'%')->paginate(5);
+        return view('pendapatan', ['pendapatan' => $cari]);
+    }
+    //End penambahan fitur pencarian atau search
+
     public function detail($id_pendapatan)
     {
         if (!$this -> PendapatanModel -> detailData($id_pendapatan)){
@@ -126,6 +135,6 @@ class PendapatanController extends Controller
     public function delete($id_pendapatan)
     {
         $this->PendapatanModel->deleteData($id_pendapatan);
-        return redirect()->route('pendapatan')->with('pesan', 'Data Berhasil Di Hapus!');   
+        return redirect()->route('pendapatan')->with('pesan', 'Data Berhasil Di Hapus!');
     }
 }

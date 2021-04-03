@@ -22,6 +22,16 @@ class LadangController extends Controller
         //return view('ladang', $dataLadang);
     }
 
+    //start penambahan fitur pencarian atau search
+    public function searchLadang(request $request)
+    {
+        $searchLadang =  $request -> get('searchLadang');
+        $cari = DB::table('ladang')->where('nama', 'ilike', '%'.$searchLadang.'%')->paginate(5);
+        return view('ladang', ['ladang' => $cari]);
+    }
+    //End penambahan fitur pencarian atau search
+
+
     public function detail($id_ladang)
     {
         if (!$this->LadangModel->detailData($id_ladang)) {

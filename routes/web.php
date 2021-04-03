@@ -29,6 +29,8 @@ Route::post('ladang/insert', [LadangController::class, 'insert']);
 Route::get('ladang/edit/{id_ladang}', [LadangController::class, 'edit']);
 Route::post('ladang/update/{id_ladang}', [LadangController::class, 'update']);
 Route::get('ladang/delete/{id_ladang}', [LadangController::class, 'delete']);
+route::get('/searchLadang', [LadangController::class, 'searchLadang']); //penambhan route pencarian data di menu ladang
+
 
 Route::get('pendapatan', [PendapatanController::class, 'index'])->name('pendapatan');
 Route::get('pendapatan/detail/{id_pendapatan}', [PendapatanController::class, 'detail']);
@@ -37,6 +39,7 @@ Route::post('pendapatan/insert', [PendapatanController::class, 'insert']);
 Route::get('pendapatan/edit/{id_pendapatan}', [PendapatanController::class, 'edit']);
 Route::post('pendapatan/update/{id_pendapatan}', [PendapatanController::class, 'update']);
 Route::get('pendapatan/delete/{id_pendapatan}', [PendapatanController::class, 'delete']);
+route::get('/searchPendapatan', [PendapatanController::class, 'searchPendapatan']); //penambhan route pencarian data di menu pendapatan
 
 Route::get('pengeluaran', [PengeluaranController::class, 'index'])->name('pengeluaran');
 Route::get('pengeluaran/detail/{id_pengeluaran}', [PengeluaranController::class, 'detail']);
