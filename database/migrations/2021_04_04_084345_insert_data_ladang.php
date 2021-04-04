@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
-class TableLadang extends Migration
+class InsertDataLadang extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class TableLadang extends Migration
      */
     public function up()
     {
-        DB::statement
-        ("
-        CREATE table LADANG (
-        id_ladang serial  primary key,
-        nama text,
-        create_date date,
-        update_date date)
-	    ");
+        DB::statement("
+            insert into ladang (nama, create_date, update_date)
+            values
+            ('Ladang 1', current_timestamp, current_timestamp),
+            ('Ladang 2', current_timestamp, current_timestamp);
+
+        "); // data ladang
+
     }
 
     /**
@@ -30,6 +30,6 @@ class TableLadang extends Migration
      */
     public function down()
     {
-        Schema::drop('ladang');
+        //
     }
 }

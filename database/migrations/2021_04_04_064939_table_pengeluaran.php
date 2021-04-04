@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 class TablePengeluaran extends Migration
 {
     /**
@@ -13,15 +13,16 @@ class TablePengeluaran extends Migration
      */
     public function up()
     {
-        Schema::create('pengeluaran', function (Blueprint $table) {
-            $table->bigIncrements('id_pengeluaran');
-            $table->integer('id_pendapatan');
-            $table->string('nama');
-            $table->decimal('amount');
-            $table->date('create_date');
-            $table->date('update_date');
-            $table->foreign('id_pendapatan')->references('id_pendapatan')->on('pendapatan');
-        });
+        DB::statement("
+           CREATE table PENGELUARAN (
+            id_pengeluaran serial  primary key,
+            id_pendapatan int REFERENCES PENDAPATAN ON DELETE CASCADE,
+            nama text,
+            amount money,
+            create_date date,
+            update_date date,
+            CONSTRAINT fk_pendapatan FOREIGN KEY(id_pendapatan) REFERENCES pendapatan(id_pendapatan))
+            ");
     }
 
     /**

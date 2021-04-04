@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
-class TablePendapatan extends Migration
+class ViewLabaBersih extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,14 @@ class TablePendapatan extends Migration
     public function up()
     {
         DB::statement
-        ("
-        CREATE table PENDAPATAN (
-            id_pendapatan serial primary key,
-            id_ladang int REFERENCES ladang ON DELETE CASCADE,
-            nama text,
-            amount money,
-            create_date date,
-            update_date date,
-            CONSTRAINT fk_ladang FOREIGN KEY(id_ladang) REFERENCES ladang(id_ladang))
+        (" create or replace view laba_bersih  as (
+select
+	sum(p1.amount) - sum(p2.amount) as laba_bersih
+from
+	pendapatan as p1
+	full join pengeluaran as p2
+	on p1.id_pendapatan = p2.id_pengeluaran
+	)
         ");
     }
 
@@ -33,6 +32,6 @@ class TablePendapatan extends Migration
      */
     public function down()
     {
-        Schema::drop('pendapatan');
+        DB::statement('DROP VIEW IF EXISTS LABA_BERSIH');
     }
 }
