@@ -21,6 +21,15 @@ class PengeluaranController extends Controller
         //return view('pengeluaran', $dataPengeluaran);
     }
 
+    //start penambahan fitur pencarian atau search
+    public function searchPengeluaran(request $request)
+    {
+        $searchPengeluaran =  $request -> get('searchPengeluaran');
+        $cari = DB::table('pengeluaran')->where('nama', 'ilike', '%'.$searchPengeluaran.'%')->paginate(5);
+        return view('pengeluaran', ['pengeluaran' => $cari]);
+    }
+    //End penambahan fitur pencarian atau search
+
     public function detail($id_pengeluaran)
     {
         if (!$this -> PengeluaranModel -> detailData($id_pengeluaran)){

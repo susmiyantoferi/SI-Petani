@@ -27,6 +27,15 @@ class LabaController extends Controller
         //return view('laba', $dataLaba);
     }
 
+    //start penambahan fitur pencarian atau search
+    public function searchLaba(request $request)
+    {
+        $searchLaba =  $request -> get('searchLaba');
+        $cari = DB::table('laba')->where('nama', 'ilike', '%'.$searchLaba.'%')->paginate(5);
+        return view('laba', ['laba' => $cari]);
+    }
+    //End penambahan fitur pencarian atau search
+
     public function detail($id_laba) 
     {
         if (!$this->LabaModel->detailData($id_laba)) {
