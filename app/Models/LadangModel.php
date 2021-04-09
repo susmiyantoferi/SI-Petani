@@ -13,6 +13,11 @@ class LadangModel extends Model
        return DB::table('ladang')->get();
    }
 
+   public function allData()  //print pdf
+   {
+    return DB::table('ladang')->get();
+   }
+
    public function detailData($id_ladang)
    {
        return DB::table('ladang')-> where ('id_ladang', $id_ladang)->first();

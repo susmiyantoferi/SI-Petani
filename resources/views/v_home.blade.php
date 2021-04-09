@@ -56,7 +56,7 @@
                  @foreach($labaBersih as $labas) <!-- Penambhan fitur read dari view database laba_bersih-->
                      <h4>{{ $labas->laba_bersih }}</h4>
                      @endforeach
-                     <p>Total Revenue</p>
+                     <p>Total Profit All Ladang</p>
                  </div>
                  <div class="icon">
                      <i class="ion ion-pie-graph"></i>

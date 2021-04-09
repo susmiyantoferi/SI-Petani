@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LadangModel;
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
+use Dompdf\Dompdf;
 
 class LadangController extends Controller
 {
@@ -16,10 +17,39 @@ class LadangController extends Controller
 
     public function index()
     {
-
         $dataLadang = ['ladang' => $this->LadangModel->allDataLadang()];
         return view('ladang', [ 'ladang' => DB::table('ladang')->paginate(5)]); //Penambahan fitur paginate
         //return view('ladang', $dataLadang);
+
+    }
+
+    public function print()
+    {
+        $data = [
+            'ladang' => $this->LadangModel->allData() //print printer
+        ];
+        return view('print', $data);//print printer
+    }
+
+    public function printpdf()
+    {
+        $data = [
+            'ladang' => $this->LadangModel->allData() //print pdf
+        ];
+        $html = view('printpdf', $data);//print pdf
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'potrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 
     //start penambahan fitur pencarian atau search

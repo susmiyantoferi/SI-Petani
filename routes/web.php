@@ -31,6 +31,8 @@ Route::get('ladang/edit/{id_ladang}', [LadangController::class, 'edit']);
 Route::post('ladang/update/{id_ladang}', [LadangController::class, 'update']);
 Route::get('ladang/delete/{id_ladang}', [LadangController::class, 'delete']);
 route::get('/searchLadang', [LadangController::class, 'searchLadang']); //penambhan route pencarian data di menu ladang
+Route::get('ladang/printpdf', [LadangController::class, 'printpdf']); //print pdf
+Route::get('ladang/print', [LadangController::class, 'print']); //print printer
 
 
 Route::get('pendapatan', [PendapatanController::class, 'index'])->name('pendapatan');
