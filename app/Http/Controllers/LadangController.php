@@ -28,7 +28,7 @@ class LadangController extends Controller
         $data = [
             'ladang' => $this->LadangModel->allData() //print printer
         ];
-        return view('print', $data);//print printer
+        return view('printLadang', $data);//print printer
     }
 
     public function printpdf()

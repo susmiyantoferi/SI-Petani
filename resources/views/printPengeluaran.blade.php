@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Laporan Jumlah Ladang</title>
+  <title>Laporan Hasil Pengeluaran</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h2 class="page-header">
-          <i class="fa fa-globe"></i> Laporan Jumlah Ladang, SI-Petani.
+          <i class="fa fa-book"></i> Laporan Hasil Pengeluaran, SI-Petani.
           <small class="pull-right">Date: {{ date('d-M-Y') }}</small>
         </h2>
       </div>
@@ -51,16 +51,18 @@
           <tr>
             <th>No</th>
             <th>Nama</th>
+            <th>Uang Keluar</th>
             <th>Create Date</th>
             <th>Update Date</th>
           </tr>
           </thead>
           <tbody>
             <?php $no = 1 ?>
-          @foreach ($ladang as $data)
+          @foreach ($pengeluaran as $data)
           <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $data->nama }}</td>
+            <td>{{ $data->amount }}</td>
             <td>{{ $data->create_date }}</td>
             <td>{{ $data->update_date }}</td>
           </tr> 

@@ -21,6 +21,14 @@ class PengeluaranController extends Controller
         //return view('pengeluaran', $dataPengeluaran);
     }
 
+    public function print()
+    {
+        $data = [
+            'pengeluaran' => $this->PengeluaranModel->allDataPengeluaran() //print printer
+        ];
+        return view('printPengeluaran', $data);//print printer
+    }
+
     //start penambahan fitur pencarian atau search
     public function searchPengeluaran(request $request)
     {

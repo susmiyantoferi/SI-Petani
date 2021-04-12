@@ -9,6 +9,7 @@
                     <div class="box-header table-responsive">
                         <h3 class="box-title">List Of Pengeluaran</h3><br>
                         <a href="/pengeluaran/add" class="btn btn-primary ">Add Data</a>
+                        <a href="/pengeluaran/print" target="_blank" class="btn fa fa-print btn-success">Print</a>
                         @if (session('pesan'))
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

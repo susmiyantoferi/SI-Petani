@@ -22,6 +22,14 @@ class PendapatanController extends Controller
         //return view('pendapatan', $dataPendapatan);
     }
 
+    public function print()
+    {
+        $data = [
+            'pendapatan' => $this->PendapatanModel->allDataPendapatan() //print printer
+        ];
+        return view('printPendapatan', $data);//print printer
+    }
+
     //start penambahan fitur pencarian atau search
     public function searchPendapatan(request $request)
     {

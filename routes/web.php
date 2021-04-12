@@ -22,6 +22,7 @@ Route::get('laba/edit/{id_laba}', [LabaController::class, 'edit']);
 Route::post('laba/update/{id_laba}', [LabaController::class, 'update']);
 Route::get('laba/delete/{id_laba}', [LabaController::class, 'delete']);
 route::get('/searchLaba', [LabaController::class, 'searchLaba']); //penambhan route pencarian data di menu pendapatan
+Route::get('laba/print', [LabaController::class, 'print']); //print printer
 
 Route::get('ladang', [LadangController::class, 'index'])->name('ladang');
 Route::get('ladang/detail/{id_ladang}', [LadangController::class, 'detail']);
@@ -43,6 +44,8 @@ Route::get('pendapatan/edit/{id_pendapatan}', [PendapatanController::class, 'edi
 Route::post('pendapatan/update/{id_pendapatan}', [PendapatanController::class, 'update']);
 Route::get('pendapatan/delete/{id_pendapatan}', [PendapatanController::class, 'delete']);
 route::get('/searchPendapatan', [PendapatanController::class, 'searchPendapatan']); //penambhan route pencarian data di menu pendapatan
+Route::get('pendapatan/print', [PendapatanController::class, 'print']); //print printer
+
 
 Route::get('pengeluaran', [PengeluaranController::class, 'index'])->name('pengeluaran');
 Route::get('pengeluaran/detail/{id_pengeluaran}', [PengeluaranController::class, 'detail']);
@@ -52,7 +55,7 @@ Route::get('pengeluaran/edit/{id_pengeluaran}', [PengeluaranController::class, '
 Route::post('pengeluaran/update/{id_pengeluaran}', [PengeluaranController::class, 'update']);
 Route::get('pengeluaran/delete/{id_pengeluaran}', [PengeluaranController::class, 'delete']);
 route::get('/searchPengeluaran', [PengeluaranController::class, 'searchPengeluaran']); //penambhan route pencarian data di menu pendapatan
-
+Route::get('pengeluaran/print', [PengeluaranController::class, 'print']); //print printer
 
 
 Auth::routes();

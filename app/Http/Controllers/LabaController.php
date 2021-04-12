@@ -27,6 +27,14 @@ class LabaController extends Controller
         //return view('laba', $dataLaba);
     }
 
+    public function print()
+    {
+        $data = [
+            'laba' => $this->LabaModel->allDataLaba() //print printer
+        ];
+        return view('printLaba', $data);//print printer
+    }
+
     //start penambahan fitur pencarian atau search
     public function searchLaba(request $request)
     {
