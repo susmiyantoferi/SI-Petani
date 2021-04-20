@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class LadangModel extends Model
 {
+    protected $table = "ladang"; //penambahan fitur export excel
+    protected $fillable = ['nama','create_date','update_date']; //penambahan fitur export excel
+
    public function allDataLadang()
    {
        return DB::table('ladang')->get();

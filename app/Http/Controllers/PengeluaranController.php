@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\PengeluaranModel;
 use App\Models\PendapatanModel; //menggunakan model Pendapatan utk tambah select combo box
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
+use Maatwebsite\Excel\Facades\Excel; // penambahan fitur export excel
+use App\Exports\PengeluaranExport; // penambahan fitur export excel
 class PengeluaranController extends Controller
 {
     public function __construct()
@@ -20,6 +22,10 @@ class PengeluaranController extends Controller
         return view('pengeluaran', [ 'pengeluaran' => DB::table('pengeluaran')->paginate(5)]); //Penambahan fitur paginate
         //return view('pengeluaran', $dataPengeluaran);
     }
+    public function pengeluaranexcel() // penambahan fitur export excel
+	{
+		return Excel::download(new PengeluaranExport, 'Data_Pengeluaran.xlsx');
+	}
 
     public function print()
     {

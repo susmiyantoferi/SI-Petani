@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class PengeluaranModel extends Model
 {
+    protected $table = "pengeluaran"; //penambahan fitur export excel
+    protected $fillable = ['nama','hasil','create_date','update_date']; //penambahan fitur export excel
+
    public function allDataPengeluaran()
    {
        return DB::table('pengeluaran')->get();
    }
-   
+
    public function detailData($id_pengeluaran)
    {
         return DB::table('pengeluaran')-> where ('id_pengeluaran', $id_pengeluaran)->first();
@@ -20,7 +23,7 @@ class PengeluaranModel extends Model
 
    public function addData($data)
    {
-        DB::table('pengeluaran')-> insert($data);  
+        DB::table('pengeluaran')-> insert($data);
    }
 
    public function editData($id_pengeluaran, $data)

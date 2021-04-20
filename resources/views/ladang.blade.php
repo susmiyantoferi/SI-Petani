@@ -9,7 +9,23 @@
                     <div class="box-header table-responsive">
                         <h3 class="box-title">List Of Ladang</h3><br>
                         <a href="/ladang/add" class="btn btn-primary ">Add Data</a>
-                        <a href="/ladang/print" target="_blank" class="btn fa fa-print btn-success">Print</a>
+
+                        {{-- Box menu export file --}}
+                        <div class="btn-group">
+                            <ul class="nav navbar-nav">
+                              <li class="dropdown">
+                                <button type="button" class="btn fa fa-print btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Export File
+                                  </button><ul class="dropdown-menu" role="menu">
+                                  <li><a href="/ladang/print" target="_blank">PDF</a></li>
+                                  <li><a href="/ladang/ladangexcel" target="_blank" >Microsoft Excel</a></li>
+                                  </ul>
+                              </li>
+                            </ul>
+                        </div>
+                        {{-- Box menu export file --}}
+
+                        {{--<a href="/ladang/print" target="_blank" class="btn fa fa-print btn-success">Print</a> --}}
                         {{-- <a href="/ladang/printpdf" target="_blank" class="btn btn-success">Print PDF</a> --}}
                         @if (session('pesan'))
                             <div class="alert alert-success alert-dismissible">

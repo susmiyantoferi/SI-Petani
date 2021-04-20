@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\LadangModel;
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
 use Dompdf\Dompdf;
-
+use Maatwebsite\Excel\Facades\Excel; // penambahan fitur export excel
+use App\Exports\LadangExport; // penambahan fitur export excel
 class LadangController extends Controller
 {
     public function __construct()
@@ -22,6 +23,10 @@ class LadangController extends Controller
         //return view('ladang', $dataLadang);
 
     }
+    public function ladangexcel() // penambahan fitur export excel
+	{
+		return Excel::download(new LadangExport, 'Data_Ladang.xlsx');
+	}
 
     public function print()
     {

@@ -23,6 +23,7 @@ Route::post('laba/update/{id_laba}', [LabaController::class, 'update']);
 Route::get('laba/delete/{id_laba}', [LabaController::class, 'delete']);
 route::get('/searchLaba', [LabaController::class, 'searchLaba']); //penambhan route pencarian data di menu pendapatan
 Route::get('laba/print', [LabaController::class, 'print']); //print printer
+Route::get('laba/labaexcel', [LabaController::class, 'labaexcel']); //penambahan fitur export excel
 
 Route::get('ladang', [LadangController::class, 'index'])->name('ladang');
 Route::get('ladang/detail/{id_ladang}', [LadangController::class, 'detail']);
@@ -34,7 +35,7 @@ Route::get('ladang/delete/{id_ladang}', [LadangController::class, 'delete']);
 route::get('/searchLadang', [LadangController::class, 'searchLadang']); //penambhan route pencarian data di menu ladang
 Route::get('ladang/printpdf', [LadangController::class, 'printpdf']); //print pdf
 Route::get('ladang/print', [LadangController::class, 'print']); //print printer
-
+Route::get('ladang/ladangexcel', [LadangController::class, 'ladangexcel']); //penambahan fitur export excel
 
 Route::get('pendapatan', [PendapatanController::class, 'index'])->name('pendapatan');
 Route::get('pendapatan/detail/{id_pendapatan}', [PendapatanController::class, 'detail']);
@@ -45,6 +46,7 @@ Route::post('pendapatan/update/{id_pendapatan}', [PendapatanController::class, '
 Route::get('pendapatan/delete/{id_pendapatan}', [PendapatanController::class, 'delete']);
 route::get('/searchPendapatan', [PendapatanController::class, 'searchPendapatan']); //penambhan route pencarian data di menu pendapatan
 Route::get('pendapatan/print', [PendapatanController::class, 'print']); //print printer
+Route::get('pendapatan/pendapatanexcel', [PendapatanController::class, 'pendapatanexcel']); //penambahan fitur export excel
 
 
 Route::get('pengeluaran', [PengeluaranController::class, 'index'])->name('pengeluaran');
@@ -56,6 +58,7 @@ Route::post('pengeluaran/update/{id_pengeluaran}', [PengeluaranController::class
 Route::get('pengeluaran/delete/{id_pengeluaran}', [PengeluaranController::class, 'delete']);
 route::get('/searchPengeluaran', [PengeluaranController::class, 'searchPengeluaran']); //penambhan route pencarian data di menu pendapatan
 Route::get('pengeluaran/print', [PengeluaranController::class, 'print']); //print printer
+Route::get('pengeluaran/pengeluaranexcel', [PengeluaranController::class, 'pengeluaranexcel']); //penambahan fitur export excel
 
 
 Auth::routes();

@@ -9,7 +9,23 @@
                     <div class="box-header table-responsive">
                         <h3 class="box-title">List Of Laba</h3><br>
                         <a href="/laba/add" class="btn btn-primary ">Add Data</a>
-                        <a href="/laba/print" target="_blank" class="btn fa fa-print btn-success">Print</a>
+                         {{-- Box menu export file --}}
+                         <div class="btn-group">
+                            <ul class="nav navbar-nav" >
+                              <li class="dropdown">
+                                <button type="button" class="btn fa fa-print btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Export File
+                                  </button>
+                                {{-- <button href="#" class="btn fa fa-print btn-success" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Export File</button> --}}
+                                <ul class="dropdown-menu" role="menu">
+                                  <li><a class="dropdown-item" href="/laba/print" target="_blank">PDF</a></li>
+                                  <li><a class="dropdown-item" href="/laba/labaexcel" target="_blank" >Microsoft Excel</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                        </div>
+                        {{-- Box menu export file --}}
+                       {{-- <a href="/laba/print" target="_blank" class="btn fa fa-print btn-success">Print</a> --}}
                         @if (session('pesan'))
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -31,7 +47,7 @@
                                 </div>
                             </form>
                         </div>
-                    
+
 
                     {{-- Box pencarian --}}
 
@@ -111,13 +127,13 @@
                 <!-- /.modal-dialog -->
             </div>
             <!-- /.modal -->
-        
+
     </section>
     <!-- /.content -->
     </div>
 
     @endforeach
 
-           
+
 
     @endsection

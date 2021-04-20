@@ -8,7 +8,8 @@ use App\Models\LabaModel;
 use App\Models\PendapatanModel; //menggunakan model Pendapatan utk tambah select combo box
 use App\Models\PengeluaranModel; //menggunakan model Pendapatan utk tambah select combo box
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
-
+use Maatwebsite\Excel\Facades\Excel; // penambahan fitur export excel
+use App\Exports\LabaExport; // penambahan fitur export excel
 class LabaController extends Controller
 {
     public function __construct()
@@ -26,6 +27,10 @@ class LabaController extends Controller
         return view('laba', [ 'laba' => DB::table('laba')->paginate(5)]); //Penambahan fitur paginate
         //return view('laba', $dataLaba);
     }
+    public function labaexcel() // penambahan fitur export excel
+	{
+		return Excel::download(new LabaExport, 'Data_Laba.xlsx');
+	}
 
     public function print()
     {
@@ -44,7 +49,7 @@ class LabaController extends Controller
     }
     //End penambahan fitur pencarian atau search
 
-    public function detail($id_laba) 
+    public function detail($id_laba)
     {
         if (!$this->LabaModel->detailData($id_laba)) {
             abort(404);
@@ -61,7 +66,7 @@ class LabaController extends Controller
         $dataPengeluaran = ['pengeluaran'=> $this -> PengeluaranModel -> allDataPengeluaran()]; //tambah select combo box
         return view('addlaba', $dataPendapatan, $dataPengeluaran);  //tambah select combo box //tambah select combo box
 
-        
+
     }
 
     public function insert()

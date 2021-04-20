@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class PendapatanModel extends Model
 {
+    protected $table = "pendapatan"; //penambahan fitur export excel
+    protected $fillable = ['nama','create_date','update_date']; //penambahan fitur export excel
+
    public function allDataPendapatan()
    {
        return DB::table('pendapatan')->get();
