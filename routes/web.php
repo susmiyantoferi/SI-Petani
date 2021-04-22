@@ -19,6 +19,12 @@ Route::get('pengguna', [PenggunaController::class, 'index'])->name('pengguna');
 Route::get('pengguna/detail/{id_pengguna}', [PenggunaController::class, 'detail']);
 Route::get('pengguna/add', [PenggunaController::class, 'add']);
 Route::post('pengguna/insert', [PenggunaController::class, 'insert']);
+Route::get('pengguna/edit/{id_pengguna}', [PenggunaController::class, 'edit']);
+Route::post('pengguna/update/{id_pengguna}', [PenggunaController::class, 'update']);
+Route::get('pengguna/delete/{id_pengguna}', [PenggunaController::class, 'delete']);
+Route::get('pengguna/print', [PenggunaController::class, 'print']); //print printer
+Route::get('pengguna/penggunaexcel', [PenggunaController::class, 'penggunaexcel']);
+route::get('/searchPengguna', [PenggunaController::class, 'searchPengguna']); //penambhan route pencarian data di menu pendapatan
 
 Route::get('laba', [LabaController::class, 'index'])->name('laba');
 Route::get('laba/detail/{id_laba}', [LabaController::class, 'detail']);

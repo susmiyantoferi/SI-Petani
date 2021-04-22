@@ -35,7 +35,6 @@
                         @endif
 
                         {{-- Box pencarian --}}
-
                         <div class="box-tools">
                             <form action="/searchLaba" method="get">
                                 <div class="input-group input-group-sm" style="width: 250px;">
@@ -47,8 +46,6 @@
                                 </div>
                             </form>
                         </div>
-
-
                     {{-- Box pencarian --}}
 
                     <div class="box-body">
