@@ -27,6 +27,7 @@ class LabaController extends Controller
         return view('laba', [ 'laba' => DB::table('laba')->paginate(5)]); //Penambahan fitur paginate
         //return view('laba', $dataLaba);
     }
+    
     public function labaexcel() // penambahan fitur export excel
 	{
 		return Excel::download(new LabaExport, 'Data_Laba.xlsx');

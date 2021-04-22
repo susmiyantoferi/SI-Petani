@@ -8,6 +8,7 @@ use App\Models\LadangModel; //menggunakan model Ladang utk tambah select combo b
 use Illuminate\Support\Facades\DB; //Penambahan fitur paginate
 use Maatwebsite\Excel\Facades\Excel; // penambahan fitur export excel
 use App\Exports\PendapatanExport; // penambahan fitur export excel
+
 class PendapatanController extends Controller
 {
     public function __construct()
@@ -22,6 +23,7 @@ class PendapatanController extends Controller
         return view('pendapatan', [ 'pendapatan' => DB::table('pendapatan')->paginate(5)]); //Penambahan fitur paginate
         //return view('pendapatan', $dataPendapatan);
     }
+    
     public function pendapatanexcel() // penambahan fitur export excel
 	{
 		return Excel::download(new PendapatanExport, 'Data_Pendapatan.xlsx');

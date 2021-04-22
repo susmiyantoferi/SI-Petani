@@ -6,6 +6,7 @@ use App\Http\Controllers\LadangController;
 use App\Http\Controllers\PendapatanController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\LabaController;
+use App\Http\Controllers\PenggunaController;
 
 
 /*Route::get('/', function(){
@@ -13,6 +14,11 @@ use App\Http\Controllers\LabaController;
 });*/
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('pengguna', [PenggunaController::class, 'index'])->name('pengguna');
+Route::get('pengguna/detail/{id_pengguna}', [PenggunaController::class, 'detail']);
+Route::get('pengguna/add', [PenggunaController::class, 'add']);
+Route::post('pengguna/insert', [PenggunaController::class, 'insert']);
 
 Route::get('laba', [LabaController::class, 'index'])->name('laba');
 Route::get('laba/detail/{id_laba}', [LabaController::class, 'detail']);
@@ -25,6 +31,7 @@ route::get('/searchLaba', [LabaController::class, 'searchLaba']); //penambhan ro
 Route::get('laba/print', [LabaController::class, 'print']); //print printer
 Route::get('laba/labaexcel', [LabaController::class, 'labaexcel']); //penambahan fitur export excel
 
+
 Route::get('ladang', [LadangController::class, 'index'])->name('ladang');
 Route::get('ladang/detail/{id_ladang}', [LadangController::class, 'detail']);
 Route::get('ladang/add', [LadangController::class, 'add']);
@@ -36,6 +43,7 @@ route::get('/searchLadang', [LadangController::class, 'searchLadang']); //penamb
 Route::get('ladang/printpdf', [LadangController::class, 'printpdf']); //print pdf
 Route::get('ladang/print', [LadangController::class, 'print']); //print printer
 Route::get('ladang/ladangexcel', [LadangController::class, 'ladangexcel']); //penambahan fitur export excel
+
 
 Route::get('pendapatan', [PendapatanController::class, 'index'])->name('pendapatan');
 Route::get('pendapatan/detail/{id_pendapatan}', [PendapatanController::class, 'detail']);

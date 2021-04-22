@@ -22,6 +22,7 @@ class PengeluaranController extends Controller
         return view('pengeluaran', [ 'pengeluaran' => DB::table('pengeluaran')->paginate(5)]); //Penambahan fitur paginate
         //return view('pengeluaran', $dataPengeluaran);
     }
+    
     public function pengeluaranexcel() // penambahan fitur export excel
 	{
 		return Excel::download(new PengeluaranExport, 'Data_Pengeluaran.xlsx');

@@ -5,13 +5,14 @@
     <li class="{{ request()->is('pendapatan') ? 'active' : '' }}"><a href="/pendapatan"><i class="fa fa-book"></i> <span>Master Pendapatan</span></a></li>
     <li class="{{ request()->is('pengeluaran') ? 'active' : '' }}"><a href="/pengeluaran"><i class="fa fa-book"></i> <span>Master Pengeluaran</span></a></li>
     <li class="{{ request()->is('laba') ? 'active' : '' }}"><a href="/laba"><i class="fa fa-book"></i> <span>Master Laba</span></a></li>
+    <li class="{{ request()->is('pengguna') ? 'active' : '' }}"><a href="/pengguna"><i class="fa fa-book"></i> <span>Master Pengguna</span></a></li>
     <li class="treeview">
-      <a href="#">
+      {{-- <a href="#">
         <i class="fa fa-files-o"></i> <span>Laporan Hasil</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
-      </a>
+      </a> --}}
       <ul class="treeview-menu">
         <li><a href="#"><i class="fa fa-pie-chart"></i>Hasil Laba Semua Ladang</a></li>
         </li>

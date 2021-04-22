@@ -23,6 +23,7 @@ class LadangController extends Controller
         //return view('ladang', $dataLadang);
 
     }
+    
     public function ladangexcel() // penambahan fitur export excel
 	{
 		return Excel::download(new LadangExport, 'Data_Ladang.xlsx');
