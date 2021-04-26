@@ -7,6 +7,7 @@ use App\Http\Controllers\PendapatanController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\LabaController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\UsersController;
 
 
 /*Route::get('/', function(){
@@ -14,6 +15,16 @@ use App\Http\Controllers\PenggunaController;
 });*/
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('users', [UsersController::class, 'index'])->name('users');
+Route::get('users/detail/{id_users}', [UsersController::class, 'detail']);
+Route::get('users/add', [UsersController::class, 'add']);
+Route::post('users/insert', [UsersController::class, 'insert']);
+Route::get('users/edit/{id_users}', [UsersController::class, 'edit']);
+Route::post('users/update/{id_users}', [UsersController::class, 'update']);
+Route::get('users/delete/{id_users}', [UsersController::class, 'delete']);
+route::get('/searchUsers', [UsersController::class, 'searchUsers']); //penambhan route pencarian data
+Route::get('users/print', [UsersController::class, 'print']); //print printer
 
 Route::get('pengguna', [PenggunaController::class, 'index'])->name('pengguna');
 Route::get('pengguna/detail/{id_pengguna}', [PenggunaController::class, 'detail']);

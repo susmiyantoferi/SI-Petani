@@ -13,7 +13,7 @@ class PenggunaController extends Controller
     public function __construct()
     {
         $this->PenggunaModel = new PenggunaModel();
-        //$this->middleware('auth'); //login
+        $this->middleware('auth'); //login
     }
     public function index()
     {
