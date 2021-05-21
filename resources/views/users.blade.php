@@ -11,7 +11,7 @@
                         <a href="/users/add " class="btn btn-primary ">Add Data</a>
 
                         {{-- Box menu export file --}}
-                        <div class="btn-group">
+                        {{-- <div class="btn-group">
                             <ul class="nav navbar-nav">
                               <li class="dropdown">
                                 <button type="button" class="btn fa fa-print btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,7 +22,7 @@
                                   </ul>
                               </li>
                             </ul>
-                        </div>
+                        </div> --}}
                         {{-- Box menu export file --}}
 
                         @if (session('pesan'))
