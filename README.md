@@ -20,8 +20,8 @@ SI-Petani adalah produk web berbasis framework laravel 8 yang digunakan untuk me
 
     
     
-        Login ke web sebagai berikut:
-        
+        Login ke web localhost dan web url demo sebagai berikut:
+        Demo web url : <https://si-petani.herokuapp.com>
         Username: admin@admin.com
         Password: 12345678
 
